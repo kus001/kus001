@@ -1,3 +1,14 @@
+## My Coding Activity
+
 ```text
-{{ wakatimeDoubleCategoryBar "Languages:" wakatimeData.Languages "Projects:" wakatimeData.Projects 5 }}
+Languages:
+JavaScript   10h 34m 12s   ███████████████████░░░░░░  72.34%
+Markdown     1h 57m 23s    ████░░░░░░░░░░░░░░░░░░░░░  13.39%
+Python       1h 18m 37s    ███░░░░░░░░░░░░░░░░░░░░░░  8.97%
+CSS          44m 31s       ██░░░░░░░░░░░░░░░░░░░░░░░  5.08%
+Text         2m 0s         █░░░░░░░░░░░░░░░░░░░░░░░░  0.23%
+
+Projects:
+map          13h 45m 26s   █████████████████████████  99.76%
+unknown      2m 0s         █░░░░░░░░░░░░░░░░░░░░░░░░  0.24%
 ```
