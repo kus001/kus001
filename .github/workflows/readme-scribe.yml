@@ -1,3 +1,4 @@
+
 name: Update Coding Stats
 
 on:
@@ -15,15 +16,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: charmbracelet/readme-scribe@master
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+
+      - name: Generate README with Markscribe
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           WAKATIME_URL: https://hackatime.hackclub.com/api/v1/
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          template: "templates/README.md.tpl"
-          writeTo: "README.md"
+        run: |
+          go run github.com/taciturnaxolotl/markscribe@master -write README.md templates/README.md.tpl
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit updated README
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update coding statistics"
