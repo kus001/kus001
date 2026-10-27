@@ -1,0 +1,29 @@
+name: Update Coding Stats
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: charmbracelet/readme-scribe@master
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          WAKATIME_URL: https://hackatime.hackclub.com/api/v1/
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          template: "templates/README.md.tpl"
+          writeTo: "README.md"
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update coding statistics"
