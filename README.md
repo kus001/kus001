@@ -1,4 +1,4 @@
-## Weekly Coding Activity
+## My Coding Activity
 
 ```text
 Languages:
