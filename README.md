@@ -10,3 +10,5 @@ Python       14m 0s        █░░░░░░░░░░░░░░░░�
 Projects:
 map          16h 18m 50s   █████████████████████████  100.00%
 ```
+
+Organizer @[MechMania](https://www.mechmania.ca/) and member of [2702 Rebels](https://github.com/2702rebels).
